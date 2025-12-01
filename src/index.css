@@ -1,0 +1,143 @@
+:root { color-scheme: light dark; }
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial; }
+
+body { background: #f6f7f9; color: #111; }
+body.dark { background: #0f0f0f; color: #eaeaea; }
+
+.container { max-width: 900px; margin: 0 auto; padding: 1rem; }
+.card {
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  padding: 1rem;
+  background: #ffffff;
+  overflow: hidden;   
+}
+.dark .card { border-color: #333; background: #1f1f1f; }
+.row { display: grid; gap: .75rem; }
+.grid-2 { grid-template-columns: 1fr 1fr; }
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: inherit;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.btn {
+  padding: .5rem 1rem; border-radius: 10px; border: 1px solid #ddd;
+  background: #fff; color: #111; cursor: pointer;
+}
+.select, .input {
+  padding: .5rem .75rem; border-radius: 10px; border: 1px solid #ddd;
+  background: #fff; color: #111; width: 100%;
+}
+.list { list-style: none; padding: 0; margin: 0; }
+.item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .75rem 1rem; border-radius: 10px;
+  border: 1px solid #e5e5e5; background: #fff; color: #111;
+}
+.item small { opacity: .8; }
+
+.dark .card { border-color: #333; background: #1f1f1f; }
+.dark .header { border-bottom-color: #444; }
+.dark .btn { background: #2a2a2a; color: #eaeaea; border-color: #444; }
+.dark .select, .dark .input { background: #2a2a2a; color: #eaeaea; border-color: #444; }
+.dark .item { border-color: #444; background: #2a2a2a; color: #eaeaea; }
+
+.search-wrap { position: relative; }
+.dropdown {
+  position: absolute; top: 110%; left: 0; right: 0;
+  background: #fff; border: 1px solid #ddd; border-radius: 10px;
+  max-height: 240px; overflow: auto; z-index: 10; color: #111;
+}
+.dark .dropdown { background: #2a2a2a; border-color: #444; color: #eaeaea; }
+.option { padding: .5rem .75rem; cursor: pointer; }
+.option:hover { background: #f2f2f2; }
+.dark .option:hover { background: #333; }
+
+.current { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: .5rem; }
+.badge { display: inline-block; padding: .2rem .5rem; border-radius: 999px; border: 1px solid #ddd; font-size: .8rem; color: inherit; }
+.dark .badge { border-color: #444; }
+
+@media (max-width: 900px) { .header { flex-wrap: wrap; gap: .75rem; } }
+
+.card .hours-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;    
+  overflow-y: hidden;
+  padding: .5rem 0 .25rem;
+  box-sizing: border-box;
+}
+
+.hours {
+  display: flex;
+  gap: .75rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: max-content;        
+  scroll-snap-type: x proximity;
+}
+
+.hour {
+  width: 84px;
+  flex: 0 0 84px;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: .5rem .4rem;
+  display: grid;
+  gap: .25rem;
+  justify-items: center;
+  background: #fff;
+  color: #111;
+  scroll-snap-align: start;
+}
+.dark .hour { border-color: #444; background: #2a2a2a; color: #eaeaea; }
+
+.hour-time { font-size: .85rem; opacity: .85; }
+.hour-icon { font-size: 1.4rem; line-height: 1; }
+.hour-temp { font-weight: 700; }
+.hour-pop  { font-size: .8rem; opacity: .9; }
+
+.week-list {
+  list-style: none;
+  margin: .5rem 0 0 0;
+  padding: 0;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  overflow: hidden;
+}
+
+.week-row {
+  display: grid;
+  align-items: center;
+  gap: .5rem;
+  grid-template-columns: 1fr auto auto auto; 
+  padding: .75rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.week-row:last-child { border-bottom: none; }
+
+.col-day { font-weight: 600; }
+.col-rain {
+  display: inline-flex; align-items: center; gap: .35rem;
+  opacity: .85; font-size: .95rem;
+}
+.col-icons { display: inline-flex; gap: .5rem; font-size: 1.15rem; }
+.col-temps {
+  display: inline-flex; gap: .5rem; justify-self: end; font-weight: 700;
+}
+.tmax { color: #ffd95e; }
+.tmin { color: #9bb0bf; }

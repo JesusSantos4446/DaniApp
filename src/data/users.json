@@ -1,0 +1,8 @@
+{
+  "users": [
+    { "user": "jesus", "pass": "12345", "name": "Jesus Santos" },
+    { "user": "shirley", "pass": "12345", "name": "Shirley Justo" },
+    { "user": "anahis", "pass": "12345", "name": "Anahis Lorenzo" },
+    { "user": "ruth", "pass": "12345", "name": "Ruth" }
+  ]
+}
